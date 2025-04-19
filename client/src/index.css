@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* space themed colors */
+    --space-dark: #0F1122;
+    --space-darker: #080A16;
+    --space-purple: #5B3DC8;
+    --space-orange: #FF6B4A; 
+    --space-blue: #4AB8FF;
+    --space-green: #50E3C2;
+
+    --background: 230 65% 4%;
+    --foreground: 0 0% 100%;
+    
+    --card: 230 65% 7%;
+    --card-foreground: 0 0% 100%;
+    
+    --popover: 230 65% 7%;
+    --popover-foreground: 0 0% 100%;
+    
+    --primary: 264 56% 51%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 230 65% 15%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 230 65% 15%;
+    --muted-foreground: 240 5% 65%;
+    
+    --accent: 230 65% 15%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 230 65% 15%;
+    --input: 230 65% 15%;
+    --ring: 264 56% 51%;
+    
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground bg-space-dark;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer components {
+  .stars-bg {
+    background-image: radial-gradient(circle at 50% 50%, transparent 2px, #0F1122 2px);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+    position: relative;
+  }
+  
+  .stars-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 3px);
+    background-size: 100px 100px;
+    background-position: 0 0, 50px 50px;
+    z-index: -1;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .planet-card {
+    transition: all 0.3s ease;
+  }
+  
+  .planet-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .gradient-text {
+    background: linear-gradient(90deg, var(--space-orange), var(--space-purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .glow-effect {
+    animation: glow 3s ease-in-out infinite;
+  }
+
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin 15s linear infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(75, 184, 255, 0.6); }
+  50% { box-shadow: 0 0 20px rgba(75, 184, 255, 0.9); }
+}
