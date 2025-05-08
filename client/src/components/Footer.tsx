@@ -8,9 +8,9 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div>
             <Link href="/">
-              <a className="text-white font-bold text-2xl tracking-wider mb-6 inline-block">
+              <div className="text-white font-bold text-2xl tracking-wider mb-6 inline-block cursor-pointer">
                 <span className="text-[#FF6B4A]">The</span>S
-              </a>
+              </div>
             </Link>
             <p className="text-gray-400 max-w-xs">
               A space startup focused on exploring the vast frontiers of space and pushing the boundaries of human knowledge.
@@ -20,17 +20,19 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="font-bold text-lg mb-4">Explore</h3>
             <ul className="space-y-2">
-              <li><Link href="/concepts"><a className="text-gray-400 hover:text-white transition-colors">Concepts</a></Link></li>
-              <li><Link href="/planets"><a className="text-gray-400 hover:text-white transition-colors">Planets</a></Link></li>
-              <li><Link href="/missions"><a className="text-gray-400 hover:text-white transition-colors">Missions</a></Link></li>
-              <li><Link href="/articles"><a className="text-gray-400 hover:text-white transition-colors">Articles</a></Link></li>
+              <li><Link href="/concepts"><div className="text-gray-400 hover:text-white transition-colors cursor-pointer">Concepts</div></Link></li>
+              <li><Link href="/planets"><div className="text-gray-400 hover:text-white transition-colors cursor-pointer">Planets</div></Link></li>
+              <li><Link href="/missions"><div className="text-gray-400 hover:text-white transition-colors cursor-pointer">Missions</div></Link></li>
+              <li><Link href="/articles"><div className="text-gray-400 hover:text-white transition-colors cursor-pointer">Articles</div></Link></li>
+              <li><Link href="/planet-predictor"><div className="text-gray-400 hover:text-white transition-colors cursor-pointer">Planet Predictor</div></Link></li>
+              <li><Link href="/calculators"><div className="text-gray-400 hover:text-white transition-colors cursor-pointer">Space Calculators</div></Link></li>
             </ul>
           </div>
           
           <div>
             <h3 className="font-bold text-lg mb-4">Company</h3>
             <ul className="space-y-2">
-              <li><Link href="/missions"><a className="text-gray-400 hover:text-white transition-colors">About Us</a></Link></li>
+              <li><Link href="/missions"><div className="text-gray-400 hover:text-white transition-colors cursor-pointer">About Us</div></Link></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Careers</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Partners</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>

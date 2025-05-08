@@ -9,8 +9,8 @@ import Concepts from "@/pages/Concepts";
 import Planets from "@/pages/Planets";
 import Articles from "@/pages/Articles";
 import Missions from "@/pages/Missions";
-import PlanetPredictor from "@/pages/PlanetPredictor";
-import SpaceCalculators from "@/pages/SpaceCalculators";
+import PlanetPredictor from "./pages/PlanetPredictor";
+import SpaceCalculators from "./pages/SpaceCalculators";
 import NotFound from "@/pages/not-found";
 
 function Router() {
