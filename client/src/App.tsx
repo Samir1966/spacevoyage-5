@@ -9,6 +9,8 @@ import Concepts from "@/pages/Concepts";
 import Planets from "@/pages/Planets";
 import Articles from "@/pages/Articles";
 import Missions from "@/pages/Missions";
+import PlanetPredictor from "@/pages/PlanetPredictor";
+import SpaceCalculators from "@/pages/SpaceCalculators";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -19,6 +21,8 @@ function Router() {
       <Route path="/planets" component={Planets} />
       <Route path="/articles" component={Articles} />
       <Route path="/missions" component={Missions} />
+      <Route path="/planet-predictor" component={PlanetPredictor} />
+      <Route path="/calculators" component={SpaceCalculators} />
       <Route component={NotFound} />
     </Switch>
   );

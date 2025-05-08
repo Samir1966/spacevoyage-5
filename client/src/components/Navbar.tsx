@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Calculator, Telescope, Globe } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,7 +14,8 @@ const Navbar: React.FC = () => {
   const navLinks = [
     { href: "/concepts", label: "Concepts" },
     { href: "/planets", label: "Planets" },
-    { href: "/missions", label: "About" },
+    { href: "/planet-predictor", label: "Planet Predictor", icon: <Telescope className="h-4 w-4 mr-1" /> },
+    { href: "/calculators", label: "Space Calculators", icon: <Calculator className="h-4 w-4 mr-1" /> },
     { href: "/articles", label: "Articles" },
   ];
 
@@ -23,28 +24,30 @@ const Navbar: React.FC = () => {
       <nav className="container mx-auto px-4 py-6 flex justify-between items-center">
         <div className="flex items-center">
           <Link href="/">
-            <a className="text-white font-bold text-2xl tracking-wider">
+            <div className="text-white font-bold text-2xl tracking-wider cursor-pointer">
               <span className="text-[#FF6B4A]">The</span>S
-            </a>
+            </div>
           </Link>
         </div>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex space-x-6">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href}>
-              <a className={`hover:text-[#FF6B4A] transition-colors font-medium ${
+              <div className={`hover:text-[#FF6B4A] transition-colors font-medium cursor-pointer flex items-center ${
                 location === link.href ? 'text-[#FF6B4A]' : 'text-white'
               }`}>
+                {link.icon && link.icon}
                 {link.label}
-              </a>
+              </div>
             </Link>
           ))}
         </div>
         
-        <Link href="/concepts">
+        <Link href="/planet-predictor">
           <Button className="hidden md:block" variant="default">
-            Explore
+            <Telescope className="h-4 w-4 mr-2" />
+            Explore Space
           </Button>
         </Link>
         
@@ -68,23 +71,25 @@ const Navbar: React.FC = () => {
           <div className="flex flex-col space-y-3">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href}>
-                <a 
-                  className={`hover:text-[#FF6B4A] transition-colors font-medium py-2 ${
+                <div 
+                  className={`hover:text-[#FF6B4A] transition-colors font-medium py-2 flex items-center cursor-pointer ${
                     location === link.href ? 'text-[#FF6B4A]' : 'text-white'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
+                  {link.icon && link.icon}
                   {link.label}
-                </a>
+                </div>
               </Link>
             ))}
-            <Link href="/concepts">
+            <Link href="/planet-predictor">
               <Button 
                 className="w-full" 
                 variant="default"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Explore
+                <Telescope className="h-4 w-4 mr-2" />
+                Explore Space
               </Button>
             </Link>
           </div>
