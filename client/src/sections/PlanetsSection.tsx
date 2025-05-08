@@ -125,12 +125,12 @@ const PlanetsSection: React.FC<PlanetsSectionProps> = ({ extended = false }) => 
                     <>
                       <div className="flex-grow"></div>
                       <Link href={`/planets?id=${planet.id}`}>
-                        <a className="text-sm text-white/70 flex items-center mt-4">
+                        <div className="text-sm text-white/70 flex items-center mt-4 cursor-pointer">
                           Learn more
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                           </svg>
-                        </a>
+                        </div>
                       </Link>
                     </>
                   )}
