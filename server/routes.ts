@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { json } from "express";
+import { handleCosmosRequest } from "./cosmos-agent";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // API routes with /api prefix
@@ -91,6 +92,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(500).json({ error: 'Failed to subscribe' });
     }
   });
+  
+  // COSMOS Space Agent API endpoint
+  app.post('/api/cosmos-agent', json(), handleCosmosRequest);
 
   const httpServer = createServer(app);
 
