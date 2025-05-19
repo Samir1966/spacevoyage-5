@@ -3,7 +3,7 @@ import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
 // Set OpenAI API key for COSMOS agent
-process.env.OPENAI_API_KEY = "sk-abcdef1234567890abcdef1234567890abcdef12";
+process.env.OPENAI_API_KEY = "sk-ijklmnopqrstuvwxijklmnopqrstuvwxijklmnop";
 
 const app = express();
 app.use(express.json());
