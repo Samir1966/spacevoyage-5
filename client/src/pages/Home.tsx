@@ -6,7 +6,6 @@ import ConceptsSection from '@/sections/ConceptsSection';
 import ExploreSection from '@/sections/ExploreSection';
 import ArticlesSection from '@/sections/ArticlesSection';
 import NewsletterSection from '@/sections/NewsletterSection';
-import CosmosAgent from '@/components/CosmosAgent';
 import { motion } from 'framer-motion';
 
 const Home: React.FC = () => {
@@ -23,7 +22,6 @@ const Home: React.FC = () => {
       <ExploreSection />
       <ArticlesSection />
       <NewsletterSection />
-      <CosmosAgent />
     </motion.div>
   );
 };
